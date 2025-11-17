@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  admin-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    container_name: activation-code-admin
+    environment:
+      - NODE_ENV=production
