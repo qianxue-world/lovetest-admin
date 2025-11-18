@@ -4,9 +4,6 @@ on:
   release:
     types: [published]
 
-env:
-  IMAGE_NAME: activation-code-admin
-
 jobs:
   release:
     runs-on: ubuntu-latest
