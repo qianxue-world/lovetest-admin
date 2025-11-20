@@ -25,6 +25,7 @@ export interface Translations {
   createCodes: string;
   deleteSelected: string;
   deleteExpired: string;
+  exportCodes: string;
   searchPlaceholder: string;
   code: string;
   status: string;
@@ -41,6 +42,9 @@ export interface Translations {
   loadMore: string;
   loading: string;
   refresh: string;
+  exporting: string;
+  exportSuccess: string;
+  exportError: string;
 
   // Code Editor
   createTitle: string;
@@ -143,6 +147,7 @@ export const translations: Record<Language, Translations> = {
     createCodes: '+ Create Codes',
     deleteSelected: 'Delete Selected',
     deleteExpired: 'Delete Expired',
+    exportCodes: 'Export',
     searchPlaceholder: 'Search by code...',
     code: 'Code',
     status: 'Status',
@@ -159,6 +164,9 @@ export const translations: Record<Language, Translations> = {
     loadMore: 'Load More',
     loading: 'Loading...',
     refresh: 'Refresh',
+    exporting: 'Exporting...',
+    exportSuccess: 'Exported {count} activation codes',
+    exportError: 'Failed to export codes',
 
     // Code Editor
     createTitle: 'Create Activation Codes',
@@ -260,6 +268,7 @@ export const translations: Record<Language, Translations> = {
     createCodes: '+ 创建激活码',
     deleteSelected: '删除选中项',
     deleteExpired: '删除过期',
+    exportCodes: '导出',
     searchPlaceholder: '按激活码搜索...',
     code: '激活码',
     status: '状态',
@@ -276,6 +285,9 @@ export const translations: Record<Language, Translations> = {
     loadMore: '加载更多',
     loading: '加载中...',
     refresh: '刷新',
+    exporting: '导出中...',
+    exportSuccess: '已导出 {count} 个激活码',
+    exportError: '导出失败',
 
     // Code Editor
     createTitle: '创建激活码',

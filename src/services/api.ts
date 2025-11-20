@@ -116,6 +116,23 @@ class ApiService {
       body: JSON.stringify(request),
     });
   }
+
+  // 获取所有激活码（用于导出）
+  async getAllCodes(): Promise<string[]> {
+    const allCodes: string[] = [];
+    let skipToken: number | undefined = undefined;
+    let hasMore = true;
+
+    while (hasMore) {
+      const response = await this.getCodes(undefined, skipToken, 1000);
+      allCodes.push(...response.codes.map(code => code.code));
+      
+      hasMore = response.hasMore;
+      skipToken = response.nextSkipToken || undefined;
+    }
+
+    return allCodes;
+  }
 }
 
 export const apiService = new ApiService();
