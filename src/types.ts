@@ -53,3 +53,17 @@ export interface ChangePasswordRequest {
 export interface MessageResponse {
   message: string;
 }
+
+export interface BatchDeleteRequest {
+  pattern: string;
+  dryRun?: boolean;
+}
+
+export interface BatchDeleteResponse {
+  success: boolean;
+  message: string;
+  matchedCount: number;
+  deletedCount: number;
+  matchedCodes: string[];
+  wasDryRun: boolean;
+}

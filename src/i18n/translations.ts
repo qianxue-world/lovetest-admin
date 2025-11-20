@@ -87,6 +87,30 @@ export interface Translations {
   // Confirmations
   deleteConfirm: string;
   deleteExpiredConfirm: string;
+  batchDeleteConfirm: string;
+
+  // Batch Delete
+  batchDeleteTitle: string;
+  batchDelete: string;
+  deletePattern: string;
+  deletePatternPlaceholder: string;
+  useRegex: string;
+  substringHint: string;
+  regexHint: string;
+  regexExamples: string;
+  regexExample1: string;
+  regexExample2: string;
+  regexExample3: string;
+  patternRequired: string;
+  preview: string;
+  previewResult: string;
+  foundMatches: string;
+  matchedCodes: string;
+  andMore: string;
+  deleteWarning: string;
+  back: string;
+  confirmDelete: string;
+  deleting: string;
 
   // Messages
   error: string;
@@ -181,6 +205,30 @@ export const translations: Record<Language, Translations> = {
     // Confirmations
     deleteConfirm: 'Are you sure you want to delete this activation code?',
     deleteExpiredConfirm: 'Delete all expired activation codes?',
+    batchDeleteConfirm: 'Are you sure you want to delete {count} activation codes? This action cannot be undone.',
+
+    // Batch Delete
+    batchDeleteTitle: 'Batch Delete Activation Codes',
+    batchDelete: 'Batch Delete',
+    deletePattern: 'Pattern',
+    deletePatternPlaceholder: 'Enter pattern (e.g., TEST or TEST-.*)',
+    useRegex: 'Use Regular Expression',
+    substringHint: 'Will match codes containing this text',
+    regexHint: 'Use regex pattern for advanced matching',
+    regexExamples: 'Examples',
+    regexExample1: 'Starts with TEST-',
+    regexExample2: 'Ends with -2024',
+    regexExample3: 'DEMO- followed by numbers',
+    patternRequired: 'Please enter a pattern',
+    preview: 'Preview Matches',
+    previewResult: 'Preview Result',
+    foundMatches: 'Found {count} matching codes',
+    matchedCodes: 'Matched Codes',
+    andMore: '...and {count} more',
+    deleteWarning: 'This action will permanently delete these codes and cannot be undone!',
+    back: 'Back',
+    confirmDelete: 'Confirm Delete',
+    deleting: 'Deleting...',
 
     // Messages
     error: 'Error',
@@ -274,6 +322,30 @@ export const translations: Record<Language, Translations> = {
     // Confirmations
     deleteConfirm: '确定要删除此激活码吗？',
     deleteExpiredConfirm: '删除所有过期的激活码？',
+    batchDeleteConfirm: '确定要删除 {count} 个激活码吗？此操作无法撤销。',
+
+    // Batch Delete
+    batchDeleteTitle: '批量删除激活码',
+    batchDelete: '批量删除',
+    deletePattern: '匹配模式',
+    deletePatternPlaceholder: '输入模式（例如：TEST 或 TEST-.*）',
+    useRegex: '使用正则表达式',
+    substringHint: '将匹配包含此文本的激活码',
+    regexHint: '使用正则表达式进行高级匹配',
+    regexExamples: '示例',
+    regexExample1: '以 TEST- 开头',
+    regexExample2: '以 -2024 结尾',
+    regexExample3: 'DEMO- 后跟数字',
+    patternRequired: '请输入匹配模式',
+    preview: '预览匹配结果',
+    previewResult: '预览结果',
+    foundMatches: '找到 {count} 个匹配的激活码',
+    matchedCodes: '匹配的激活码',
+    andMore: '...还有 {count} 个',
+    deleteWarning: '此操作将永久删除这些激活码，无法撤销！',
+    back: '返回',
+    confirmDelete: '确认删除',
+    deleting: '删除中...',
 
     // Messages
     error: '错误',

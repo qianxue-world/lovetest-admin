@@ -7,6 +7,8 @@ import type {
   GenerateCodesResponse,
   ChangePasswordRequest,
   MessageResponse,
+  BatchDeleteRequest,
+  BatchDeleteResponse,
 } from '../types';
 
 class ApiService {
@@ -105,6 +107,13 @@ class ApiService {
   async deleteExpiredCodes(): Promise<MessageResponse> {
     return this.request<MessageResponse>('/api/admin/codes/expired', {
       method: 'DELETE',
+    });
+  }
+
+  async batchDeleteCodes(request: BatchDeleteRequest): Promise<BatchDeleteResponse> {
+    return this.request<BatchDeleteResponse>('/api/admin/codes/batch-delete', {
+      method: 'POST',
+      body: JSON.stringify(request),
     });
   }
 }

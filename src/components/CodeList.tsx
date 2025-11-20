@@ -8,12 +8,13 @@ interface CodeListProps {
   onDelete: (code: string) => void;
   onCreate: () => void;
   onDeleteExpired: () => void;
+  onBatchDelete: () => void;
   onLoadMore: () => void;
   onRefresh: () => void;
   hasMore: boolean;
 }
 
-export default function CodeList({ codes, onDelete, onCreate, onDeleteExpired, onLoadMore, onRefresh, hasMore }: CodeListProps) {
+export default function CodeList({ codes, onDelete, onCreate, onDeleteExpired, onBatchDelete, onLoadMore, onRefresh, hasMore }: CodeListProps) {
   const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -54,6 +55,9 @@ export default function CodeList({ codes, onDelete, onCreate, onDeleteExpired, o
         <div className="header-actions">
           <button onClick={onRefresh} className="refresh-button">
             {t.refresh}
+          </button>
+          <button onClick={onBatchDelete} className="batch-delete-button">
+            {t.batchDelete}
           </button>
           <button onClick={onDeleteExpired} className="delete-expired-button">
             {t.deleteExpired}

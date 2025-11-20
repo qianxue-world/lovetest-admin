@@ -5,6 +5,7 @@ import type { ActivationCode, User, StatsResponse } from '../types';
 import CodeList from './CodeList';
 import CodeEditor from './CodeEditor';
 import ChangePassword from './ChangePassword';
+import BatchDelete from './BatchDelete';
 import LanguageSwitcher from './LanguageSwitcher';
 import VersionBadge from './VersionBadge';
 import './Dashboard.css';
@@ -20,6 +21,7 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
   const [stats, setStats] = useState<StatsResponse | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
+  const [showBatchDelete, setShowBatchDelete] = useState(false);
   const [loading, setLoading] = useState(true);
   const [nextSkipToken, setNextSkipToken] = useState<number | null>(null);
   const [hasMore, setHasMore] = useState(false);
@@ -171,6 +173,7 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
               onDelete={handleDelete}
               onCreate={handleCreate}
               onDeleteExpired={handleDeleteExpired}
+              onBatchDelete={() => setShowBatchDelete(true)}
               onLoadMore={handleLoadMore}
               onRefresh={handleRefresh}
               hasMore={hasMore}
@@ -183,6 +186,15 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
         <ChangePassword
           onClose={() => setShowChangePassword(false)}
           onSuccess={() => {}}
+        />
+      )}
+
+      {showBatchDelete && (
+        <BatchDelete
+          onClose={() => setShowBatchDelete(false)}
+          onSuccess={() => {
+            Promise.all([loadCodes(), loadStats()]);
+          }}
         />
       )}
     </div>
