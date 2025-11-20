@@ -5,16 +5,17 @@ metadata:
   name: lovetest-admin
 
 resources:
+  - namespace.yaml
   - deployment.yaml
   - service.yaml
   - ingress.yaml
 
 commonLabels:
   app: lovetest-admin
-  version: v1.0.0
+  managed-by: argocd
 
 images:
   - name: omaticaya/lovetest-admin
     newTag: latest
 
-namespace: default
+namespace: lovetest
